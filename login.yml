@@ -9,10 +9,6 @@ spring:
   profiles: dev   #开发环境
   application:
     name: zzy-login
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:7001/eureka/
   datasource:
     username: root
     password: linuszhong
@@ -22,10 +18,16 @@ eureka:
     hibernate:
       ddl-auto: update
       show-sql: true
+      
   thymeleaf:
     mode: LEGACYHTML5
     cache: false
+eureka:
+  client:  #客户端注册进Eureka服务列表中
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
   instance:
     instance-id: login     #自定义显示名称
     prefer-ip-address: true                     #访问路径显示为IP
     
+      
