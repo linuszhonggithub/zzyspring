@@ -1,0 +1,31 @@
+spring:
+  profiles:
+  active:
+  - dev
+---
+server:
+  port: 8001
+spring:
+  profiles: dev   #开发环境
+  application:
+    name: zzy-login
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-dev.com:7001/eureka/
+  datasource:
+    username: root
+    password: linuszhong
+    url: jdbc:mysql://192.168.1.78:3306/zhongzeyu?charactereEncoding=utf8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  instance:
+    instance-id: login     #自定义显示名称
+    prefer-ip-address: true                     #访问路径显示为IP
+    
